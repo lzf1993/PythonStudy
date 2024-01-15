@@ -12,7 +12,7 @@ import json
 
 def buy_card(uid):
 
-  url = "http://198.11.180.148:14498/http_to_tcp?lang=EN&command=20&type=403&uid={}&rid=1393799".format(uid)
+  url = "http://198.11.180.148:14498/http_to_tcp?lang=EN&command=20&type=403&uid={}&rid=1633772".format(uid)
   payload = json.dumps({
     "op_type": 1,
     "card_id": [
