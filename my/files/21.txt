@@ -1,30 +1,13 @@
- 1     private class MyCallback extends DiffUtil.Callback {
- 2         private ArrayList<Student> old_students, new_students;
- 3
- 4         MyCallback(ArrayList<Student> data, ArrayList<Student> students) {
- 5             this.old_students = data;
- 6             this.new_students = students;
- 7         }
- 8
- 9         @Override
-10         public int getOldListSize() {
-11             return old_students.size();
-12         }
-13
-14         @Override
-15         public int getNewListSize() {
-16             return new_students.size();
-17         }
-18
-19         // 判断Item是否已经存在
-20         @Override
-21         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-22             return old_students.get(oldItemPosition).getNum() == new_students.get(newItemPosition).getNum();
-23         }
-24
-25         // 如果Item已经存在则会调用此方法，判断Item的内容是否一致
-26         @Override
-27         public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-28             return old_students.get(oldItemPosition).getName().equals(new_students.get(newItemPosition).getName());
-29         }
-30     }
+ 1         @Override
+ 2         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List payloads) {
+ 3             if (payloads.isEmpty()) {
+ 4                 onBindViewHolder(holder, position);
+ 5             } else {
+ 6                 MyViewHolder myViewHolder = (MyViewHolder) holder;
+ 7                 Bundle bundle = (Bundle) payloads.get(0);
+ 8                 if (bundle.getString(NAME_KEY) != null) {
+ 9                     myViewHolder.name.setText(bundle.getString(NAME_KEY));
+10                     myViewHolder.name.setTextColor(Color.BLUE);
+11                 }
+12             }
+13         }
