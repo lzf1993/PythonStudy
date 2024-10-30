@@ -13,7 +13,7 @@ import json
 
 def return_card(uid):
 
-  url = "http://198.11.180.148:14498/http_to_tcp?lang=&command=20&type=403&uid={}&rid=1758507".format(uid)
+  url = "http://43.157.137.145:14498/http_to_tcp?lang=&command=20&type=403&app_version=4.3.2&uid={}&rid=11171456".format(uid)
 
   payload = "{\n    \"op_type\": 2\n}"
   headers = {
