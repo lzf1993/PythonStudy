@@ -141,7 +141,10 @@ def search_lines_in_directory(string_xml_file, directory_b):
 
     spend = time.time() - ticks
     print(f"=============  {string_xml_file} 查找结束：{spend}=============\n")
-    return found_no_used_id
+    if len(found_no_used_id) > 0:
+        return NoUserString(string_xml_file, found_no_used_id)
+    else:
+        return None
 
 
 
@@ -188,21 +191,51 @@ def search_no_user_id(folder):
     ## 获取所有的 string.xml 文件
     string_xml_list = find_strings_xml(folder)
 
+    # 指定要写入的文件路径
+    file_path = "record.txt"
+
     all_no_used_id = []
 
     ## 遍历每一个 string.xml 文件
     for file_name in string_xml_list:
-        all_no_used_id.append(search_lines_in_directory(file_name, folder))
+        no_use_string = search_lines_in_directory(file_name, folder)
+        if no_use_string is None:
+            continue
+        else:
+            all_no_used_id.append(no_use_string)
+
+
+    # 最后一步：打开文件并写入文本
+    with open(file_path, 'w') as file:
+
+        file.write("\n========= 1.查询的 string.xml 列表：===========\n")
+        for id_xml in string_xml_list:
+            file.write(f"{id_xml} \n")
+
+        if len(all_no_used_id) >0:
+            file.write("\n========= 1.查询的 string.xml 列表：===========\n")
+            for ids in all_no_used_id:
+                file.write(f"=== {ids.fileName} ===\n")
+                for strings in ids.all_no_used_id:
+                    file.write(f"{strings}\n")
 
     print(all_no_used_id)
 
 
 
+class NoUserString:
+
+    fileName = ''
+    all_no_used_id = ['']
+    def __init__(self, name, all_no_used_id):
+        self.fileName = name
+        self.all_no_used_id = all_no_used_id
+
 
 if __name__ == '__main__':
     # 使用示例
     folder_path1 = '/Users/lzf2/Documents/weipai/wejoy_us/wejoy/'
-    folder_path = "/Users/lzf2/Documents/weipai/wejoy_us/wejoy/wepie/res/"
+    folder_path = "/Users/lzf2/Documents/weipai/wejoy_us/wejoy"
     search_no_user_id(folder_path)
 
 
