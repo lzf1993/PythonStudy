@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="rank_title_text">Clasificación</string>
+
+    <string name="rank_popularity_default_area">Global</string>
+    <string name="rank_popularity_default_province">Nacional</string>
+    <string name="rank_popularity_text">Popular</string>
+    <string name="rank_vip_text">VIP</string>
+    <string name="rank_couple_text">Pareja</string>
+    <string name="intimacy_friend">BFF</string>
+    <string name="rank_voice_room_text">Salas de Voz</string>
+    <string name="rank_family_text">Familia</string>
+    <string name="rank_avatar_show">PLAY show</string>
+
+    <string name="rank_popularity_sub_text_1">Hoy</string>
+    <string name="rank_popularity_sub_text_2">Ayer</string>
+    <string name="rank_popularity_sub_text_3">Famosos</string>
+    <string name="rank_popularity_sub_text_4">Anual</string>
+    <string name="rank_vip_sub_text_1">Hoy</string>
+    <string name="rank_vip_sub_text_2">Ayer</string>
+    <string name="rank_vip_sub_text_3">Famosos</string>
+    <string name="rank_couple_sub_text_1">Semanal</string>
+    <string name="rank_couple_sub_text_2">General</string>
+    <string name="rank_couple_sub_text_3">Bendición</string>
+    <string name="rank_voice_room_sub_text_1">Lista de hoy</string>
+    <string name="rank_voice_room_sub_text_2">Semanal</string>
+    <string name="rank_voice_room_sub_text_3">General</string>
+    <string name="rank_family_sub_text_1">Semanal</string>
+    <string name="rank_family_sub_text_2">General</string>
+    <string name="rank_avatar_sub_text_1">Hombre</string>
+    <string name="rank_avatar_sub_text_2">Mujer</string>
+
+    <string name="family_rank_empty_list_view_1">No hay familias en la lista en este momento</string>
+    <string name="family_rank_empty_list_view_2">Saltar</string>
+    <string name="family_new_rank_item_active">Actividad</string>
+    <string name="family_new_rankitem_enter_family">Entrar</string>
+    <string name="family_new_rank_bottom_join_family">Ingresar a familia</string>
+
+    <string name="popularity_rank_item_receive_gift">Recibir regalos</string>
+    <string name="popularity_rank_item_value_x">Encanto: %1$d</string>
+    <string name="popularity_rank_item_value_d">Encanto %1$d</string>
+    <string name="popularity_rank_item_value">Encanto</string>
+
+    <string name="vip_rank_item_my_vip">Mi VIP</string>
+    <string name="vip_rank_item_value_x">Valor personal: %1$d</string>
+    <string name="vip_rank_item_value_d">Valor personal: %1$d</string>
+    <string name="vip_rank_item_value">Valor personal</string>
+    <string name="vip_rank_item_buy_vip">Suscribir VIP</string>
+
+    <string name="couple_rank_item_goto_wedding">Para proponer</string>
+    <string name="couple_rank_item_love_value">Valor de Amor</string>
+    <string name="couple_rank_item_bless_value_x">Valor de bendición：%1$d</string>
+    <string name="couple_rank_item_bless_value">valor de bendición</string>
+
+    <string name="voice_room_rank_item_hot_value">Popular</string>
+    <string name="voice_room_rank_item_playing">En línea</string>
+    <string name="voice_room_rank_item_follow">Seguir</string>
+    <string name="voice_room_rank_item_followed">Seguido</string>
+    <string name="voice_room_rank_item_buy_room">Abrir una Sala de Voz Avanzada</string>
+
+    <string name="rank_empty_list_tips">Aún no hay datos de clasificación</string>
+    <string name="hof_rank_list_current_month">Este mes</string>
+
+    <string name="rank_loading">Cargando...</string>
+    <string name="rank_release_to_load">Bajar</string>
+    <string name="rank_pull_up_for_more">Enrolla para cargar más</string>
+    <string name="rank_pull_to_refresh">Tire hacia abajo para actualizar</string>
+    <string name="rank_loading_refresh">actualizando</string>
+    <string name="rank_days">días</string>
+    <string name="area_other">Otro</string>
+
+    <string name="rank_dominating_text">Domina la lista</string>
+    <string name="wedding">Casamiento</string>
+    <string name="avatar_rank_collection_point">Colección</string>
+    <string name="avatar_rank_dialog_title">PLAY show</string>
+    <string name="relation_value_s">Intimacy</string>
+    <string name="relation_value_rank">Intimacy：</string>
+    <string name="relation_value">Intimacy</string>
+
+</resources>

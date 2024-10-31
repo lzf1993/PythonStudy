@@ -223,6 +223,7 @@ def merge_string_id(string_xml_list):
     print(f"============= strings.xml 合并完成 {spd} 总数：{s_size} =============")
 
 
+
 ## ======================== 6.将结果写入文件 ========================
 def remove_empty_lines(input_file, output_file):
     with open(input_file, 'r') as file:
@@ -261,35 +262,36 @@ def print_result_to_file(string_xml_list):
 
 ## ======================== 6.遍历所有的目标 string.xml 文件 ========================
 
-# 处理包含特殊字符的文本内容
-def handle_special_characters(element):
-    if element.text is not None and "&quot;" in element.text:
-        element.text = ET.CDATA(element.text)
-    for child in element:
-        handle_special_characters(child)
+def delete_lines_with_string(file_path):
+    # 读取原始文件内容
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
 
-def remove_element_by_string(xml_file):
-    tree = ET.parse(xml_file)
-    root = tree.getroot()
+    # 查找包含目标字符串的行并删除包含该字符串的行及其所在的 <string> 开头 </string> 结尾的内容
+    filtered_lines = []
 
-    print(f"==== 开始检查 {xml_file} ====")
-    for element in root.findall(".//string"):
-        find_result = False
+    # 检查每一行，代表是否找到，没有找到，则拼接
+    skip_line = False
+    for line in lines:
+
+        ## 查询是否有 没有用到的资源
         for no_use_str in no_string_id_use_size_list:
-            ## 没有使用的
-            if no_use_str == element.attrib.get('name', 'None_Xml'):
-                try:
-                    root.remove(element)
-                    find_result = True
-                    print(f"移除 {no_use_str}")
-                except Exception as e:
-                    print(f"移除 {no_use_str} 异常，{e}")
+            # 构建要查找的字符串
+            target_string = f'<string name="{no_use_str}">'
+            if target_string in line:
+                skip_line = True
+                break
 
-                ## 找到了，则开始读取文件下一行
-                if find_result: break
+        ## 下一行需要检查
+        if not skip_line:
+            filtered_lines.append(line)
+        if skip_line and "</string>" in line.strip():
+            skip_line = False
 
-    # 处理特殊字符
-    tree.write(xml_file, encoding='utf-8', xml_declaration=True, method="xml")
+    # 将修改后的内容写回文件
+    with open(file_path, 'w') as file:
+        file.writelines(filtered_lines)
+
 
 
 def clear_no_use_string():
@@ -299,7 +301,7 @@ def clear_no_use_string():
 
     if clear_str_size > 0:
         for string_file in all_string_file_list:
-            remove_element_by_string(string_file)
+            delete_lines_with_string(string_file)
 
     spend = time.time() - ticks
     print(f"============= 5.清除资源结束：{spend}=============")
