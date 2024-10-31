@@ -1,6 +1,7 @@
 # coding=utf-8
 import os
 import re
+import threading
 import time  # 引入time模块
 
 
@@ -16,11 +17,14 @@ import time  # 引入time模块
 # 需要过滤的文件
 ignore_find_file = [
     'res/values',
-    'build/intermediates',
 ]
 
 # 需要过滤的模块
 ignore_find_module = [
+
+
+    '/build/intermediates',
+
     '/wejoy/.idea/',
     '/wejoy/.git/',
 
@@ -65,7 +69,7 @@ ignore_find_module = [
 debug = True
 
 
-## 1.查找所有的 string.xml 文件
+## ======================== 1.查找所有的 string.xml 文件 ========================
 def find_strings_xml(folder):
     print(f"\n============= 1.strings.xm 开始查找： =============")
     found_files = []
@@ -87,7 +91,7 @@ def find_strings_xml(folder):
 
 
 
-## 2.从 string.xml 中提取 id 部分
+## ======================== 2.从 string.xml 中提取 id 部分 ========================
 def extract_string_name_from_line(line):
     match = re.search(r'<string name="([^"]+)', line)
     if match:
@@ -97,7 +101,11 @@ def extract_string_name_from_line(line):
 
 
 
-## 3.查询某个文件中的 id ，在项目中是否存在，如果不存在，则进行记录返回
+## ======================== 3.查询某个文件中的 string_id ，在项目中是否存在，如果不存在，则进行记录返回  ========================
+# 创建锁和结果列表
+lock = threading.Lock()
+all_no_used_id = []
+
 def search_lines_in_directory(string_xml_file, directory_b):
     if not os.path.exists(string_xml_file) or not os.path.isdir(directory_b):
         print("File or directory not found.")
@@ -105,9 +113,10 @@ def search_lines_in_directory(string_xml_file, directory_b):
 
     ## 读取文件中的每一行
     found_no_used_id = []
-    ticks = time.time()
-    print(f"\n============= 3.{string_xml_file} 开始查找：=============")
+    found_no_use_size = 0
     cur_string_index = 0
+    ticks = time.time()
+    print(f"\n============= 3.{string_xml_file} 总数 {all_id_string_size} 开始查找：=============")
     with open(string_xml_file, 'r') as file:
 
         for id_string in file.readlines():
@@ -135,22 +144,25 @@ def search_lines_in_directory(string_xml_file, directory_b):
                         find_result = find_string_in_file(id_string, file_path)
                 if find_result:
                     break
-                ## id 没有找到则进行记录
+
+            ## 查找结束 id 没有找到则进行记录
             if not find_result:
-                spend1 = time.time() - ticks
-                print(f"没有找到 {id_string.strip()} 当前位置 {cur_string_index} 总数 {all_id_string_size} 耗时 {spend1}")
+                spend1 = (time.time() - ticks) / 1000
+                found_no_use_size = found_no_use_size + 1
                 found_no_used_id.append(id_string)
+                print(f"没有找到 {id_string.strip()} 当前位置 {cur_string_index} 总数 {found_no_use_size} 耗时 {spend1}")
 
     spend = time.time() - ticks
     print(f"============= 3.{string_xml_file} 查找结束：{spend}=============\n")
     if len(found_no_used_id) > 0:
-        return NoUserString(string_xml_file, found_no_used_id)
-    else:
-        return None
+        with lock:
+           result_data = NoUserString(string_xml_file, found_no_used_id)
+           all_no_used_id.append(result_data)
 
 
 
-## 4.查找当前文件：如果是 .java 或者 .kt 文件，则查找是否存在 "R.String.a" ，如果是 .xml 文件，则查找是否存在 "@string/a"
+
+## ======================== 4.查找当前文件：如果是 .java 或者 .kt 文件，则查找是否存在 "R.String.a" ，如果是 .xml 文件，则查找是否存在 "@string/a"  ========================
 def find_string_in_file(string_id, file_path):
     # 检查文件是否存在
     if not os.path.isfile(file_path):
@@ -159,13 +171,12 @@ def find_string_in_file(string_id, file_path):
 
     # 获取文件扩展名
     _, file_extension = os.path.splitext(file_path)
-
     # 是否是需要过滤的文件
     is_ignore_file = any(string in file_path for string in ignore_find_file)
 
     if is_ignore_file:
         return False
-    elif file_extension in ['.java', '.kt']:
+    if file_extension in ['.java', '.kt']:
         search_string = f"R.string.{string_id.strip()}"
     elif file_extension == '.xml':
         search_string = f"@string/{string_id.strip()}"
@@ -186,45 +197,79 @@ def find_string_in_file(string_id, file_path):
     #     print(f"{file_path}【找到了】: '{search_string}'")
     return found
 
-## 合并所有要查找的 string.xml 字符串
+
+
+
+## ========================  5. 合并所有要查找的 string.xml 字符串, 返回一个文件 list ========================
 all_id_string_size = 0
 def merge_string_id(string_xml_list):
+
+    print(f"\n============= 2.strings.xml 开始合并： =============")
     global all_id_string_size
     all_id_string_size = 0
-    print(f"\n============= 2.strings.xml 开始合并： =============")
     ticks = time.time()
-    file_path = "string_find.txt"
-    with open(file_path, 'w') as file_write:
-        for file_name in string_xml_list:
-            with open(file_name, 'r', encoding='utf-8') as file_read:
-                for line in file_read:
-                    id_str = extract_string_name_from_line(line.strip())
-                    if len(id_str) > 0:
-                        file_write.write(f"{id_str}\n")
-                        all_id_string_size = all_id_string_size +1
+
+    # 定义输出文件名模板
+    output_all_string_path = "string_id_all.txt"
+    output_file_list = []
+    output_template = "string_id_output_{}.txt"
+    output_file_count = 1
+    output_file_line_count = 0
+    output_file = open(output_template.format(output_file_count), 'w')
+    output_all_file = open(output_all_string_path, 'w')
+    output_file_list.append(output_file)
+
+    for file_name in string_xml_list:
+        ## 打开一个文件
+        with open(file_name, 'r', encoding='utf-8') as file_read:
+            for line in file_read:
+                id_str = extract_string_name_from_line(line.strip())
+                # 写入一个文件
+                output_all_file.write(id_str)
+                output_file.write(id_str)
+                output_file_line_count += 1
+                if output_file_line_count >= 100:
+                    output_file.close()
+                    output_file_count += 1
+                    output_file = open(output_template.format(output_file_count), 'w')
+                    output_file_line_count = 0
+                    all_id_string_size = all_id_string_size + 1
+                    output_file_list.append(output_file)
+
     spd = time.time() - ticks
+    output_file.close()
+    output_all_file.close()
     print(f"============= 2.strings.xml 合并完成 {spd}： =============")
-    return file_path
+    return output_file_list
 
 
 
-## 入口函数，开始查找
+## ========================  6.入口函数，开始查找 ========================
 def search_no_user_id(folder):
 
     # 指定要写入的文件路径
     file_path = "record.txt"
 
-    all_no_used_id = []
-
     ## 1.获取所有的 string.xml 文件
     string_xml_list = find_strings_xml(folder)
 
-    ## 2.合并所有的 string.xml 到一个文件
-    file_name = merge_string_id(string_xml_list)
+    ## 2.合并所有的 string.xml 到一个文件列表
+    file_name_list = merge_string_id(string_xml_list)
+
 
     ## 3.读取这个文件，看文件里面内容，项目中是否存在
-    no_use_string = search_lines_in_directory(file_name, folder)
-    all_no_used_id.append(no_use_string)
+    threads = []
+    for file_name in file_name_list:
+        thread = threading.Thread(target=search_lines_in_directory, args=(file_name,folder,))
+        threads.append(thread)
+        thread.start()
+
+        no_use_string = search_lines_in_directory(file_name, folder)
+        all_no_used_id.append(no_use_string)
+
+    # 等待所有线程完成
+    for thread in threads:
+        thread.join()
 
 
     ## 4.最后一步：打开文件并写入文本

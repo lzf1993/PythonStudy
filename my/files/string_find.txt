@@ -7954,6 +7954,10 @@ time_month_str_short_9
 time_month_str_short_10
 time_month_str_short_11
 time_month_str_short_12
+time_d_short
+time_h_short
+time_min_short
+time_sec_short
 share_cancel
 share_success
 share
