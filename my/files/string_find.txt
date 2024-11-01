@@ -96,27 +96,6 @@ interest_group_search_hint_2
 interest_group_detail_voice_room_ID
 game_linked_group_bottom_tips
 dialog_group_chat_forbidden_jump
-hwpush_goback
-hwpush_forward
-hwpush_refresh
-hwpush_collect
-hwpush_deltitle
-hwpush_msg_collect
-hwpush_msg_favorites
-hwpush_delete
-hwpush_selectall
-hwpush_collect_tip
-hwpush_collect_tip_known
-hwpush_cancel
-hwpush_unselectall
-hwpush_no_collection
-cloudpush_app_name
-hwpush_richmedia
-hwpush_loading_title
-hwpush_dialog_limit_title
-hwpush_dialog_limit_message
-hwpush_dialog_limit_ok
-hwpush_request_provider_permission
 hwpush_ability_value
 wp_lang
 hello_world
@@ -317,11 +296,6 @@ pwd_input_tip
 new_pwd_tip_again
 modify_pwd_tip_cur
 pwd_sure_tip
-teen_pwd_set_tip
-teen_pwd_reset
-teen_pwd_reset_tip
-teen_pwd_verify
-teen_pwd_verify_tip
 family_owner_name
 family_coin_donate
 family_active_contribute
@@ -708,7 +682,6 @@ cocos_cooperate_two_user_rank_item_4
 cocos_cooperate_two_user_rank_item_5
 cocos_cooperate_two_user_rank_item_6
 family_level_up_view_1
-family_level_up_view_2
 friend_list_item_group_1
 snatch_song_result_item_view_1
 snatch_song_result_item_view_2
@@ -763,7 +736,6 @@ try_song_activity_11
 try_song_activity_12
 try_song_activity_13
 try_song_activity_14
-werewolf_user_view_2
 say_guess_msg_view_1
 activity_lover_home_update_ring_1
 activity_lover_home_update_ring_2
@@ -796,7 +768,6 @@ family_lottery_steal_1
 family_lottery_steal_2
 family_lottery_steal_3
 family_lottery_steal_4
-auction_content_item_1
 custom_defined
 activity_voc_detail_1
 voc_like_need_phone
@@ -806,7 +777,6 @@ dialog_warn_exit_room_to_del_room
 dialog_tip_open_advance_room
 dialog_tip_learn_advance_room
 audio_match_seat_view_1
-xroom_invite_list_item_1
 vip_check_in_extra_reward
 activity_lover_home_setting_1
 activity_lover_home_setting_2
@@ -822,7 +792,6 @@ invited_add_friend_tip_game
 family_world_msg_view_1
 date_day_item_2
 search_empty_result
-user_info_dialog_2
 activity_report_chat_choose_1
 activity_report_chat_choose_2
 activity_report_chat_choose_3
@@ -844,14 +813,11 @@ activity_userinfo_detail_3
 activity_userinfo_detail_4
 activity_userinfo_detail_5
 activity_userinfo_detail_6
-activity_userinfo_detail_7
 activity_userinfo_detail_9
 activity_userinfo_detail_10
 activity_userinfo_detail_11
-activity_userinfo_detail_12
 activity_userinfo_detail_13
 activity_userinfo_detail_14
-activity_userinfo_detail_16
 activity_userinfo_detail_17
 flash_image_view_1
 flash_image_view_2
@@ -947,13 +913,11 @@ wedding_title_view_2
 circle_indicator_1
 circle_indicator_2
 circle_indicator_3
-forbid_game_dialog_2
 family_lottery_card_gain_2
 family_lottery_card_gain_3
 family_lottery_card_gain_4
 select_wedding_host_item_1
 select_wedding_host_item_2
-werewolf_operate_view_8
 cp_star_value_view_1
 xroom_auth_dialog_view_1
 xroom_auth_dialog_view_2
@@ -1058,7 +1022,6 @@ usre_price_dialog_4
 wedding_guest_seat_view_1
 discover_square_post_view_1
 discover_square_post_view_2
-exchange_doudou_view_6
 wedding_date_day_item_1
 wedding_date_day_item_2
 loverh_header_view_1
@@ -1071,7 +1034,6 @@ loverh_header_view_7
 loverh_header_view_8
 ice_loading_view_1
 ice_loading_view_2
-werewolf_guard_view_1
 my_family_view_1
 my_family_tab_main
 my_family_tab_task
@@ -1097,12 +1059,9 @@ home_friend_list_item_1
 home_friend_list_item_2
 home_friend_list_item_3
 propose_single_view_new_1
-family_bottom_seat_view_1
 family_choose_box_item_1
 family_choose_box_item_2
 family_choose_box_item_3
-activity_care_delete_1
-room_info_advanced_functions_lay_5
 room_background
 room_info_advanced_prolong
 report_song_information_view_1
@@ -1203,8 +1162,6 @@ emcee_item_view_3
 emcee_item_view_4
 emcee_item_view_5
 activity_lover_home_1
-care_send_activity_1
-care_send_activity_2
 lover_home_single_view_2
 lover_home_single_view_3
 lover_home_single_view_4
@@ -1259,12 +1216,10 @@ activity_report_block_user_success_3
 ranking_tab_view_new_1
 ranking_tab_view_new_2
 ranking_tab_view_new_3
-family_top_seat_view_1
 role_owner_view_3
 role_owner_view_4
 family_manage_family_info_view_3
 family_manage_family_info_view_6
-care_main_user_cell_1
 draw_guess_seat_view_1
 draw_guess_seat_view_3
 home_social_wanyou_title_1
@@ -1310,7 +1265,6 @@ include_draw_play_user_2
 activity_family_create_3
 activity_family_create_4
 activity_family_create_6
-activity_family_create_7
 activity_love_rank_help_1
 activity_love_rank_help_2
 activity_love_rank_help_3
@@ -1486,9 +1440,7 @@ audio_match_ban_view_4
 lover_home_couple_view_1
 room_x_dismiss
 usr_price_item_1
-price_currency_s_s
 open_mic_dialog_1
-dialog_greeting_view_2
 selected_host_list_1
 privacy_share_game_status
 privacy_record_stats
@@ -1610,10 +1562,6 @@ ice_ball_adjust_voice_dialog_3
 ice_ball_adjust_voice_dialog_4
 task_receive_dialog_view_1
 report_chat_audio_self_view_1
-werewolf_state_view_10
-werewolf_state_view_11
-werewolf_state_view_27
-werewolf_state_view_40
 add_friend_dialog_3
 activity_user_record_2
 activity_user_record_3
@@ -1657,13 +1605,11 @@ choose_game_pager_item_5
 choose_game_pager_item_6
 choose_game_pager_item_7
 choose_game_pager_item_8
-friend_play_item_1
 friend_play_item_3
 cp_match_anim_view_1
 cp_match_anim_view_2
 cp_match_anim_view_3
 cp_match_anim_view_4
-grub_role_lay_1
 goods_show_all_item_1
 circle_overview_1
 circle_overview_2
@@ -1720,8 +1666,6 @@ activity_song_contribute_9
 say_guess_gaming_title_view_1
 say_guess_gaming_title_view_2
 say_guess_gaming_title_view_3
-game_dialog_speak_3
-game_dialog_speak_4
 activity_pay_1
 activity_pay_2
 activity_pay_3
@@ -2146,7 +2090,6 @@ room_seat_info_dialog_send_gift
 room_seat_info_dialog_add_friend
 room_seat_info_dialog_admin
 room_seat_info_dialog_admin_report
-room_seat_info_dialog_dist_zero
 room_seat_for_g_b
 room_seat_ctrl_open
 room_seat_ctrl_close
@@ -2197,7 +2140,6 @@ activity_dialog_tip_double_bt_3
 activity_dialog_tip_double_bt_4
 group_chat_members
 group_chat_info_error
-group_chat_4
 group_chat_5
 group_chat_6
 group_chat_fold
@@ -2217,7 +2159,6 @@ singer_know_view_1
 singer_know_view_2
 singer_know_view_3
 singer_know_view_4
-singer_know_view_5_for_ko
 insurance_request_view_1
 insurance_request_view_2
 insurance_request_view_3
@@ -2271,7 +2212,6 @@ family_send_assign_box_view_6
 cp_ctrl_delay_sec_d
 cp_ctrl_delay_minute_d
 cp_ctrl_stop
-werewolf_vote_head_cell_2
 say_guess_best_partner_view_1
 say_guess_best_partner_view_2
 little_game
@@ -2305,8 +2245,6 @@ msg_game_invite_model_4
 msg_game_invite_model_5
 msg_game_invite_model_6
 trick_face_choose_flirt
-game_dialog_bomb_2
-game_dialog_bomb_3
 music_hum_game_view_1
 music_hum_game_view_2
 say_guess_invite_view_1
@@ -3295,9 +3233,6 @@ recognizing
 birthday_time_cannot_over_current
 broad_note
 broad_send_in_room
-broad_send_in_room_end
-broad_receiver_end_extra
-broad_gift_end_extra
 team_game
 x_game_team_waiting
 music_hum_unknow_type
@@ -3357,7 +3292,6 @@ gift_card
 game_play_together
 care_combo_num
 care_send_gift_add_love
-privacy_read_view_detail
 teen_model_input_password_tips
 teen_model_modify_password_success
 scene_error
@@ -3427,8 +3361,6 @@ common_text_loading_refresh
 common_text_tips
 fish_common_text_tips
 common_text_konw
-xroom_unity_1
-xroom_unity_2
 common_force_exit_game
 common_add_success
 common_add_fail
@@ -3511,7 +3443,6 @@ chat_reply
 server_rally
 server_rally_tip
 rally_now
-server_rally_gold
 is_matching_player
 good_communication_words
 report_for_bad_behaviors
@@ -3592,7 +3523,6 @@ receiver_qq_not_empty
 receiver_address_not_empty
 receiver_name_not_empty
 receiver_phone_not_empty
-phone_num_len_limit
 apply_insurance
 wait_reply_after_send
 write_words_for_her
@@ -4040,7 +3970,6 @@ send_gift_change_text_1
 send_gift_change_text_2
 preference_tips
 age_preference_title
-age_pref_select_def
 preference_setting_title
 preference_setting_desc
 lang_preference_title
@@ -4399,10 +4328,6 @@ cannot_verify_phone_content
 car_anim_title
 shield
 shield_dialog_content
-draw_guess_gift_price_5
-draw_guess_gift_price_66
-draw_guess_gift_price_50
-draw_guess_gift_price_100
 official
 left_days
 login_common
@@ -4424,14 +4349,9 @@ video_expired_hint
 traffic_usage_title
 traffic_usage_message
 traffic_usage_continue_download
-unseat_dialog_content
 free_of_charge
 pay_attention_to_notice
-insuranceHelp_main_content
-my_lover
 resovle_data_fail
-x_second
-chorus_prepare_title_tip
 group_transfer_level_tips
 music_hum_value_concrete
 music_hum_naming
@@ -5315,7 +5235,6 @@ voice_room_glacier_title
 glacier_signup_enter
 glacier_signup_start
 glacier_name
-glacier_join_gift
 glacier_signup_entered
 glacier_player_list_title
 glacier_prize_pool
@@ -5333,8 +5252,6 @@ glacier_close
 glacier_play_again
 glacier_round_tips
 glacier_watcher_tips
-glacier_eliminator_tips
-glacier_game_area_gift_num
 glacier_bottom_tips
 glacier_close_title
 glacier_close_show
@@ -5373,7 +5290,6 @@ login_select_region_server_tip
 login_select_region_server_tip_my_ip
 login_select_region_problem
 login_select_region_server_ch
-login_select_region_server_th
 login_select_region_confirm_title
 login_progress
 login_contact_service
@@ -5567,7 +5483,6 @@ draw_open_conflict_is_show
 bingo_open_conflict_is_show
 truth_open_conflict_is_show
 truth_dare_close
-price_currency_s_s
 activity_pay_1
 activity_pay_2
 activity_pay_3
@@ -5580,7 +5495,6 @@ dialog_coin_not_enough_bottom_2
 dialog_coin_not_enough_bottom_3
 shop_item_activity_get_text
 chief_deputy_key
-medal_num_format
 medal_title
 medal_wear_medal
 medal_my_medal
@@ -5708,7 +5622,6 @@ game_room_spy_room_word_desc_dialog_common_title
 game_room_spy_room_word_desc_dialog_player_talk_title
 game_room_spy_room_word_desc_dialog_all_player_talk_title
 game_room_spy_room_word_desc_dialog_player_talk_content
-game_room_spy_room_boom_word_waiting_3
 game_room_spy_room_no_boom_word
 game_room_spy_room_game_continue
 game_room_spy_room_game_over
@@ -6521,7 +6434,6 @@ ice_ball_send_gift
 ice_ball_report
 ice_ball_total_games
 share_success
-game_view_content_description
 wp_lang
 local_select
 left_min_str

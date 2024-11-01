@@ -57,7 +57,7 @@ ignore_find_module = [
     '/wejoy/module/landlord',
     '/wejoy/module/test',
     '/wejoy/module/app',
-    '/wejoy/module/app',
+    '/wejoy/module/super_user',
 
     '/wejoy/service/CustomerService',
     '/wejoy/service/VoiceServiceAgora',
@@ -65,7 +65,7 @@ ignore_find_module = [
 
 
 ## 中文 id
-chinese_elements = []
+chinese_elements = set()
 
 
 ## ======================== 1.查找所有的 string.xml 文件 ========================
@@ -83,7 +83,14 @@ def find_strings_xml(folder):
             real_path = os.path.join(root, file)
             if "strings" in file and "values" == parent_path:
                 found_files.append(real_path)
-
+            if "strings" in file and "values-es" == parent_path:
+                found_files.append(real_path)
+            if "strings" in file and "values-ru" == parent_path:
+                found_files.append(real_path)
+            if "strings" in file and "values-fr" == parent_path:
+                found_files.append(real_path)
+            if "strings" in file and "values-pt" == parent_path:
+                found_files.append(real_path)
     spend = time.time() - ticks
     print(f"============= strings.xml 查找结束：{spend} =============\n")
     return found_files
@@ -110,7 +117,7 @@ def parse_xml_for_chinese_elements(file_path):
         name = element.get("name")
         text = element.text
         if name is not None and contains_chinese(text):
-            chinese_elements.append(name)
+            chinese_elements.add(name)
 
     return chinese_elements
 
@@ -127,9 +134,11 @@ def find_chinese_id_string(string_xml_list):
 
     ## 记录到文件中
     if len(chinese_elements) > 0:
+        list_chinese = list(chinese_elements)
+        list_chinese.sort()
         file_path = "find_chinese_string.txt"
         with open(file_path, 'w') as file_write:
-            for chinese_id in chinese_elements:
+            for chinese_id in list_chinese:
                 file_write.write(f"{chinese_id}\n")
 
     spd = time.time() - ticks
