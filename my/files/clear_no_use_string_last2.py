@@ -257,6 +257,7 @@ def print_result_to_file(string_xml_list):
     ## 去掉空行
     remove_empty_lines(file_path, file_path_last)
     spd = time.time() - ticks
+    file.close()
     print(f"============= 4.结果写入完成：{spd}=============")
 
 
@@ -275,9 +276,10 @@ def delete_lines_with_string(file_path):
     for line in lines:
 
         ## 查询是否有 没有用到的资源
+        rel_line = line.strip()
         for no_use_str in no_string_id_use_size_list:
             # 构建要查找的字符串
-            target_string = f'<string name="{no_use_str}">'
+            target_string = f'<string name="{no_use_str}"'
             if target_string in line:
                 skip_line = True
                 break
@@ -285,13 +287,14 @@ def delete_lines_with_string(file_path):
         ## 下一行需要检查
         if not skip_line:
             filtered_lines.append(line)
-        if skip_line and "</string>" in line.strip():
+        if skip_line and ("</string>" in rel_line or "/>" in rel_line):
+            print(f"不符合规则，删除该行  {rel_line}")
             skip_line = False
 
     # 将修改后的内容写回文件
     with open(file_path, 'w') as file:
         file.writelines(filtered_lines)
-
+    file.close()
 
 
 def clear_no_use_string():
