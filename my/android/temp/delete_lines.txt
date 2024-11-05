@@ -1,0 +1,53 @@
+不符合规则，删除该行  <string name="activity_backpack_1">Mochila</string>
+不符合规则，删除该行  <string name="activity_backpack_1">Mochila</string>
+不符合规则，删除该行  <string name="activity_backpack_1">bag</string>
+不符合规则，删除该行  <string name="activity_backpack_1">Рюкзак</string>
+不符合规则，删除该行  <string name="activity_backpack_1">背包</string>
+不符合规则，删除该行  <string name="activity_backpack_2">Todavía no has comprado el paquete de oro</string>
+不符合规则，删除该行  <string name="activity_backpack_2">Você ainda não comprou o envelope vermelho de moeda de ouro</string>
+不符合规则，删除该行  <string name="activity_backpack_2">You haven\'t bought any Gold red packet</string>
+不符合规则，删除该行  <string name="activity_backpack_2">Вы еще не покупали красный конверт с монетами.</string>
+不符合规则，删除该行  <string name="activity_backpack_2">你还没有购买金币红包哦</string>
+不符合规则，删除该行  <string name="activity_gain_vip_gift_7" translatable="false">00天00时00分后失效</string>
+不符合规则，删除该行  <string name="activity_gain_vip_gift_7" translatable="false">00天00时00分后失效</string>
+不符合规则，删除该行  <string name="activity_gain_vip_gift_7" translatable="false">00天00时00分后失效</string>
+不符合规则，删除该行  <string name="activity_gain_vip_gift_7" translatable="false">00天00时00分后失效</string>
+不符合规则，删除该行  <string name="backpack_item_1" translatable="false">6元红包</string>
+不符合规则，删除该行  <string name="backpack_item_1" translatable="false">6元红包</string>
+不符合规则，删除该行  <string name="backpack_item_1" translatable="false">6元红包</string>
+不符合规则，删除该行  <string name="backpack_item_2" translatable="false">含金币1800个</string>
+不符合规则，删除该行  <string name="backpack_item_2" translatable="false">含金币1800个</string>
+不符合规则，删除该行  <string name="backpack_item_2" translatable="false">含金币1800个</string>
+不符合规则，删除该行  <string name="backpack_item_3" translatable="false">x10</string>
+不符合规则，删除该行  <string name="backpack_item_3" translatable="false">x10</string>
+不符合规则，删除该行  <string name="backpack_item_3" translatable="false">x10</string>
+不符合规则，删除该行  <string name="create_wedding_view_2" translatable="false">12月31日 18:30–20:30</string>
+不符合规则，删除该行  <string name="create_wedding_view_2" translatable="false">12月31日 18:30–20:30</string>
+不符合规则，删除该行  <string name="create_wedding_view_2" translatable="false">12月31日 18:30–20:30</string>
+不符合规则，删除该行  <string name="family_level_up_view_1" translatable="false">恭喜本家族升级为5级家族\n获得宝箱奖励</string>
+不符合规则，删除该行  <string name="family_level_up_view_1" translatable="false">恭喜本家族升级为5级家族\n获得宝箱奖励</string>
+不符合规则，删除该行  <string name="family_level_up_view_1" translatable="false">恭喜本家族升级为5级家族\n获得宝箱奖励</string>
+不符合规则，删除该行  <string name="first_charge_popup_text_1" translatable="false">我是注釋1234567890–43242354252523423626246245223526247246246522352362452452354</string>
+不符合规则，删除该行  <string name="first_charge_popup_text_1" translatable="false">我是注釋1234567890–43242354252523423626246245223526247246246522352362452452354</string>
+不符合规则，删除该行  <string name="first_charge_popup_text_1" translatable="false">我是注釋1234567890–43242354252523423626246245223526247246246522352362452452354</string>
+不符合规则，删除该行  <string name="guard_string" translatable="false">对一个房间进行守护之人，将计入这个房间的守护团;\n用户在房间内每送出5金币礼物，可增加1点其对房间 的守护值;\n所有用户对该房间的守护值之和记为该房间的守护值。</string>
+不符合规则，删除该行  <string name="guard_string" translatable="false">对一个房间进行守护之人，将计入这个房间的守护团;\n用户在房间内每送出5金币礼物，可增加1点其对房间 的守护值;\n所有用户对该房间的守护值之和记为该房间的守护值。</string>
+不符合规则，删除该行  <string name="guard_string" translatable="false">对一个房间进行守护之人，将计入这个房间的守护团;\n用户在房间内每送出5金币礼物，可增加1点其对房间 的守护值;\n所有用户对该房间的守护值之和记为该房间的守护值。</string>
+不符合规则，删除该行  <string name="hiragana_word_contribute_for_ja">For example: あかずきん (up to 20 words)</string>
+不符合规则，删除该行  <string name="hiragana_word_contribute_for_ja">Por ejemplo：あかずきん (máximo 20 caracteres)</string>
+不符合规则，删除该行  <string name="hiragana_word_contribute_for_ja">Por exemplo,：あかずきん (até 20 caracteres)</string>
+不符合规则，删除该行  <string name="hiragana_word_contribute_for_ja">Например：あかずきん (максимум 20 символов).</string>
+不符合规则，删除该行  <string name="hiragana_word_contribute_for_ja">例如：あかずきん（上限20个字）</string>
+不符合规则，删除该行  <string name="teen_forget_tip" translatable="false">若你要重置青少年模式的密码，请你发送邮件至wejoy.law@gmail.com，主题命名为【你的WePlayID+青少年模式密码重置】。邮件中请你上传本人手持身份证和写有“仅用于WePlay密码重置”纸张的照片，要求本人、身份证和纸张在同一照片中，且字迹清晰可辨。你的资料仅用于密码重置申诉，WePlay不会泄露你的个人信息，并会尽快为你处理。</string>
+不符合规则，删除该行  <string name="teen_forget_tip" translatable="false">若你要重置青少年模式的密码，请你发送邮件至wejoy.law@gmail.com，主题命名为【你的WePlayID+青少年模式密码重置】。邮件中请你上传本人手持身份证和写有“仅用于WePlay密码重置”纸张的照片，要求本人、身份证和纸张在同一照片中，且字迹清晰可辨。你的资料仅用于密码重置申诉，WePlay不会泄露你的个人信息，并会尽快为你处理。</string>
+不符合规则，删除该行  <string name="teen_forget_tip" translatable="false">若你要重置青少年模式的密码，请你发送邮件至wejoy.law@gmail.com，主题命名为【你的WePlayID+青少年模式密码重置】。邮件中请你上传本人手持身份证和写有“仅用于WePlay密码重置”纸张的照片，要求本人、身份证和纸张在同一照片中，且字迹清晰可辨。你的资料仅用于密码重置申诉，WePlay不会泄露你的个人信息，并会尽快为你处理。</string>
+不符合规则，删除该行  <string name="word_contribute_tip5_for_ja">For example: 赤ずきん (up to 6 words) </string>
+不符合规则，删除该行  <string name="word_contribute_tip5_for_ja">Por ejemplo：红ずきん (máximo 6 caracteres)</string>
+不符合规则，删除该行  <string name="word_contribute_tip5_for_ja">Por exemplo,：红ずきん (até 6 caracteres)</string>
+不符合规则，删除该行  <string name="word_contribute_tip5_for_ja">Например：红ずきん (максимум 6 символов). </string>
+不符合规则，删除该行  <string name="word_contribute_tip5_for_ja">例如：赤ずきん（上限6个字）</string>
+不符合规则，删除该行  <string name="word_contribute_tip6_for_ja">For example: 童話の1つ (up to 10 words) </string>
+不符合规则，删除该行  <string name="word_contribute_tip6_for_ja">Por ejemplo：童話の1つ (máximo 10 caracteres)</string>
+不符合规则，删除该行  <string name="word_contribute_tip6_for_ja">Por exemplo,：conto de fadas の 1 つ (até 10 caracteres)</string>
+不符合规则，删除该行  <string name="word_contribute_tip6_for_ja">Например：童話の1つ (максимум 10 символов) </string>
+不符合规则，删除该行  <string name="word_contribute_tip6_for_ja">例如：童話の1つ（上限10个字）</string>
