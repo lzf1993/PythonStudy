@@ -28,7 +28,7 @@ def parse_arsc(apk_path):
             all_strings.append(name)
 
     # 将所有字符串写入文件
-    output_file = '../files/android_strings_output.txt'
+    output_file = '../android/temp/android_strings_output.txt'
     with open(output_file, 'w', encoding='utf-8') as f:
         for s in all_strings:
             f.write(f"{s} \n")
@@ -39,7 +39,7 @@ def parse_arsc(apk_path):
 
 if __name__ == '__main__':
     # 调用解析函数
-    parse_arsc("/Users/lzf2/Downloads/4720011.apk")
+    parse_arsc("/Users/lzf2/Downloads/4720009_us_20241105.apk")
 
 
 

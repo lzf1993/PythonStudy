@@ -60,7 +60,13 @@ ignore_find_module = [
     '/wejoy/service/VoiceServiceAgora',
 ]
 
-debug = True
+
+clear_string_blank = [
+    'game_view_content_description'
+]
+
+
+
 ## 使用的 string_id map
 string_id_use_size_map = {}
 
@@ -105,12 +111,14 @@ def find_strings_xml(folder):
     return found_files
 
 
+
 ## ======================== 2.从 string.xml 中提取 id 部分 ========================
 def extract_string_name_from_line(line):
     match = re.search(r'<string name="([^"]+)', line)
     if match:
         return match.group(1)
     return ""
+
 
 
 ## ========================  3.查询某个文件中的 id ，在项目中是否存在，如果不存在，则进行记录返回 ========================
@@ -142,6 +150,7 @@ def search_lines_in_directory(directory_b):
     ## 所有的 id_key 没有找到
     spend = time.time() - ticks
     print(f"============= 3.查找结束：{spend}=============\n")
+
 
 
 ## ========================  4.查找当前文件：如果是 .java 或者 .kt 文件，则查找是否存在 "R.String.a" ，如果是 .xml 文件，则查找是否存在 "@string/a" ========================
@@ -198,6 +207,8 @@ def find_string_in_file(file_path):
     return found
 
 
+
+
 ## ======================== 5.合并所有要查找的 string.xml 字符串 ========================
 
 def merge_string_id(string_xml_list):
@@ -210,7 +221,7 @@ def merge_string_id(string_xml_list):
             with open(file_name, 'r', encoding='utf-8') as file_read:
                 for line in file_read:
                     id_str = extract_string_name_from_line(line.strip())
-                    if len(id_str) > 0:
+                    if len(id_str) > 0 and id_str not in clear_string_blank:
                         file_write.write(f"{id_str}\n")
                         # 添加到 map 集合
                         string_id_use_size_map[f'{id_str}'] = 0
@@ -238,8 +249,8 @@ def print_result_to_file(string_xml_list):
     # 指定要写入的文件路径
     ticks = time.time()
     print(f"\n============= 4.开始将结果写入文件：=============")
-    file_path = "../files/record_4.txt"
-    file_path_last = "../files/record_4_last.txt"
+    file_path = "../android/temp/clear_temp.txt"
+    file_path_last = "../android/temp/clear_record.txt"
     with open(file_path, 'w') as file:
 
         file.write("\n========= 1.查询的 string.xml 列表：===========\n")
@@ -261,7 +272,10 @@ def print_result_to_file(string_xml_list):
     print(f"============= 4.结果写入完成：{spd}=============")
 
 
+
 ## ======================== 6.遍历所有的目标 string.xml 文件 ========================
+ # 删除的内容
+delete_lines = []
 
 def delete_lines_with_string(file_path):
     # 读取原始文件内容
@@ -274,7 +288,6 @@ def delete_lines_with_string(file_path):
     # 检查每一行，代表是否找到，没有找到，则拼接
     skip_line = False
     for line in lines:
-
         ## 查询是否有 没有用到的资源
         rel_line = line.strip()
         for no_use_str in no_string_id_use_size_list:
@@ -288,7 +301,7 @@ def delete_lines_with_string(file_path):
         if not skip_line:
             filtered_lines.append(line)
         if skip_line and ("</string>" in rel_line or "/>" in rel_line):
-            print(f"不符合规则，删除该行  {rel_line}")
+            delete_lines.append(f"不符合规则，删除该行  {rel_line}\n")
             skip_line = False
 
     # 将修改后的内容写回文件
@@ -306,8 +319,16 @@ def clear_no_use_string():
         for string_file in all_string_file_list:
             delete_lines_with_string(string_file)
 
+    # 记录删除的行
+    delete_lines.sort()
+    print(f"delete_lines size {len(delete_lines)}")
+    file_path_last = "../android/temp/delete_lines.txt"
+    with open(file_path_last, 'w') as printF:
+        printF.writelines(delete_lines)
+
     spend = time.time() - ticks
     print(f"============= 5.清除资源结束：{spend}=============")
+
 
 
 ## ======================== 7.入口函数，开始查找 ========================
@@ -330,8 +351,9 @@ def search_no_user_id(folder):
     clear_no_use_string()
 
 
+
 ## ======================== 7.启动程序 ========================
 if __name__ == '__main__':
     # 使用示例
-    folder_path = "/Users/lzf2/Documents/weipai/wejoy_us/wejoy"
+    folder_path = "/Users/lzf2/Documents/weipai/wejoy"
     search_no_user_id(folder_path)
