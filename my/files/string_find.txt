@@ -621,9 +621,6 @@ family_call_view_3
 family_call_view_7
 family_call_view_11
 family_call_view_15
-backpack_item_1
-backpack_item_2
-backpack_item_3
 family_main_box_item_1
 prop_info_dialog_reward_item_view_1
 auction_bidding_sit_up_tip
@@ -654,7 +651,6 @@ family_task_active_view_4
 family_task_active_view_6
 room_msg_item_gift_gain
 vip_room_create_item
-activity_gain_vip_gift_7
 select_hour_item_1
 family_available_box_view_1
 family_available_box_view_2
@@ -1051,9 +1047,7 @@ family_not_join_view_create
 family_not_join_view_list_empty
 family_not_join_view_create_tip_charm
 activity_rank_1
-activity_backpack_1
 activity_wardrobe
-activity_backpack_2
 dialog_btn_drawable_1
 home_friend_list_item_1
 home_friend_list_item_2
@@ -5907,7 +5901,6 @@ activity_gain_vip_gift_2
 activity_gain_vip_gift_3
 activity_gain_vip_gift_4
 activity_gain_vip_gift_6
-activity_gain_vip_gift_7
 vip
 vip_gift_item_1
 vip_gift_item_unlock
