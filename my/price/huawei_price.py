@@ -1,6 +1,7 @@
 import openpyxl
 import warnings
 import re
+import sys
 
 warnings.filterwarnings('ignore')
 
@@ -182,9 +183,18 @@ def writePrice(path: str, save_name: str):
 if __name__ == "__main__":
     # 仅读取价格打开此方法
     # readAllPrice(newpath)
-    # 仅替换价格并生成新文件，打开此方法
-    # 这里默认生成的文件在项目根目录，请注意
-    writePrice(oldpath, "/Users/lzf2/PycharmProjects/PythonStudy/my/price/news.xlsx")
-    # 比较新旧价格打开此方法
-    # compareOldAndNewFile(oldpath,newpath)
-    # compareOldAndNewFile(oldpath_ayu, newayupath)
+    
+    # 生成的中间文件路径
+    news_file = "/Users/lzf2/PycharmProjects/PythonStudy/my/price/news.xlsx"
+    last_news_file = "/Users/lzf2/PycharmProjects/PythonStudy/my/price/last_news.xlsx"
+    
+    # 1. 首先执行华为价格处理
+    writePrice(oldpath, news_file)
+    print("\n华为价格处理完成！")
+    
+    # 2. 然后处理 IS 价格
+    import price_is_formatter
+    price_is_formatter.process_excel(news_file, last_news_file)
+    
+    # 3. 如果需要比较新旧价格，可以取消下面的注释
+    # compareOldAndNewFile(oldpath, last_news_file)
