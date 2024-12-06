@@ -119,6 +119,7 @@ def update_prices(csv_path, price_txt_path):
                 # 查找匹配的预期价格
                 sg_price = prices['SG']
                 price_updated = False
+                old_price_str = price_str
                 
                 for expected in expected_prices:
                     if abs(sg_price - expected['SG']) < 100:  # 允许小误差
@@ -133,7 +134,9 @@ def update_prices(csv_path, price_txt_path):
                                     'row': row_num,
                                     'country': country,
                                     'old_price': old_price,
-                                    'new_price': expected[country]
+                                    'new_price': expected[country],
+                                    'old_price_str': old_price_str,
+                                    'new_price_str': format_price_string(prices)
                                 })
                                 price_updated = True
                         break
@@ -168,10 +171,15 @@ def main():
         if changes:
             print("\n价格更新记录:")
             print("行号 | 国家 | 原价格 | 新价格")
-            print("-" * 50)
+            print("-" * 120)  # 增加分隔线长度
             
             for change in changes:
-                print(f"{change['row']:3d} | {change['country']:4s} | {change['old_price']:8} | {change['new_price']:8d}")
+                # 打印基本信息
+                print(f"{change['row']:3d} | {change['country']:4s} | {change['old_price']:12} | {change['new_price']:12d}")
+                # 打印完整的Price字段内容
+                print(f"原始Price: {change['old_price_str']}")
+                print(f"更新Price: {change['new_price_str']}")
+                print("-" * 120)  # 每条记录之间添加分隔线
             
             print(f"\n总计更新了 {len(changes)} 处价格")
         else:
