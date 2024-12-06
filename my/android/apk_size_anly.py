@@ -1,13 +1,15 @@
-from apkutils.apkfile import APKFile
 import sqlite3
+
+from androguard.core.axml import ARSCParser
+from androguard.core.apk import APK
 
 
 def extract_apk_info(apk_file):
-    apk = apkFile(apk_file)
+    apk = APK(apk_file)
     file_types = {}
-    for file_info in apk.files:
-        file_type = file_info['type']
-        file_size = file_info['size']
+    for file in apk.get_files():
+        file_type = file.split('.')[-1]  # 获取文件类型
+        file_size = file
         if file_type in file_types:
             file_types[file_type] += file_size
         else:

@@ -160,5 +160,5 @@ def search_no_user_id(folder):
 ## ======================== 4.启动程序 ========================
 if __name__ == '__main__':
     # 使用示例
-    folder_path = "/Users/lzf2/Documents/weipai/wejoy_us/wejoy"
+    folder_path = "/Users/lzf2/Documents/weipai/wejoy"
     search_no_user_id(folder_path)
