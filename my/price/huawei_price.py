@@ -150,7 +150,7 @@ def writePrice(path: str, save_name: str):
                         # 正则要替换的值 如CN;3.00
                         rp = '%s;\d*.\d*' % p.name
                         # 新价格str 如CN;3.00
-                        np = '%s;%s' % (p.name, p.new_price)
+                        np = '%s;%.2f' % (p.name, float(p.new_price))
                         old_price = re.search(rp, price).group()
                         # 替换字符串中的旧价格
                         price = re.sub(rp, np, price)
